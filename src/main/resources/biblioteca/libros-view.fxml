@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" prefWidth="800" prefHeight="600"
+      xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      fx:controller="biblioteca.controllers.LibrosController">
+
+    <!-- Título -->
+    <Label text="Listado de Libros"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <!-- Tabla -->
+    <TableView fx:id="tablaLibros" VBox.vgrow="ALWAYS">
+
+        <columns>
+
+            <TableColumn fx:id="colTitulo" text="Título" prefWidth="200"/>
+            <TableColumn fx:id="colAutores" text="Autor(es)" prefWidth="250"/>
+            <TableColumn fx:id="colAnio" text="Año" prefWidth="100"/>
+            <TableColumn fx:id="colCategoria" text="Categoría" prefWidth="150"/>
+            <TableColumn fx:id="colFormato" text="Formato" prefWidth="100"/>
+            <TableColumn fx:id="colDuracion" text="Duración" prefWidth="120"/>
+
+        </columns>
+
+    </TableView>
+
+    <!-- Botón volver -->
+    <Button text="Volver" onAction="#onVolverClick"/>
+
+</VBox>

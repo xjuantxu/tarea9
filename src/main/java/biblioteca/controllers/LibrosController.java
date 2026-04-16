@@ -18,6 +18,10 @@ public class LibrosController {
 
     private Controlador controlador;
 
+    public void setControlador(Controlador controlador) {
+        this.controlador = controlador;
+    }
+
     @FXML
     private TableView<Libro> tablaLibros;
 

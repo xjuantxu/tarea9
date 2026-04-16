@@ -8,11 +8,9 @@
       xmlns="http://javafx.com/javafx/17.0.12"
       fx:controller="biblioteca.controllers.LibrosController">
 
-    <!-- Título -->
     <Label text="Listado de Libros"
            style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
 
-    <!-- Tabla -->
     <TableView fx:id="tablaLibros" VBox.vgrow="ALWAYS">
 
         <columns>
@@ -28,7 +26,6 @@
 
     </TableView>
 
-    <!-- Botón volver -->
     <Button text="Volver" onAction="#onVolverClick"/>
 
 </VBox>

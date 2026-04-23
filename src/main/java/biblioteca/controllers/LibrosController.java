@@ -25,6 +25,9 @@ public class LibrosController {
     @FXML
     private TableView<Libro> tablaLibros;
 
+
+    @FXML
+    private TableColumn<Libro, String> colISBN;
     @FXML
     private TableColumn<Libro, String> colTitulo;
 
@@ -68,6 +71,7 @@ public class LibrosController {
         });
 
         // Configurar columnas
+        colISBN.setCellValueFactory(new PropertyValueFactory<>("ISBN"));
         colTitulo.setCellValueFactory(new PropertyValueFactory<>("titulo"));
         colAnio.setCellValueFactory(new PropertyValueFactory<>("anio"));
         colCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));

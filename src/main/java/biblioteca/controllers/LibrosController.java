@@ -5,14 +5,14 @@ import biblioteca.modelo.Modelo;
 import biblioteca.modelo.dominio.Libro;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
-import javafx.scene.control.TableView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.beans.property.SimpleStringProperty;
 import biblioteca.modelo.dominio.Audiolibro;
 
 import java.util.List;
+import java.util.Optional;
 
 public class LibrosController {
 
@@ -118,6 +118,7 @@ public class LibrosController {
         cargarLibros();
     }
 
+
     private void cargarLibros() {
         List<Libro> lista = controlador.listadoLibros();
         tablaLibros.setItems(FXCollections.observableArrayList(lista));
@@ -141,5 +142,44 @@ public class LibrosController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void onNuevoClick() {
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/biblioteca/libro-view.fxml")
+            );
+
+            Dialog<Libro> dialog = new Dialog<>();
+            dialog.setTitle("Nuevo Libro");
+
+            dialog.getDialogPane().setContent(loader.load());
+
+            ButtonType btnOk = new ButtonType("Crear", ButtonBar.ButtonData.OK_DONE);
+            dialog.getDialogPane().getButtonTypes().addAll(btnOk, ButtonType.CANCEL);
+
+            LibroController controller = loader.getController();
+
+            dialog.setResultConverter(button -> {
+                if (button == btnOk) {
+                    return controller.getLibro();
+                }
+                return null;
+            });
+
+            dialog.showAndWait().ifPresent(libro -> {
+                controlador.alta(libro);
+                cargarLibros(); // refrescar tabla
+            });
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private void mostrarError(String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
     }
 }

@@ -3,61 +3,65 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="600" prefWidth="800" spacing="10" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioteca.controllers.LibrosController">
+<VBox prefHeight="600"
+      prefWidth="800"
+      spacing="10"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="biblioteca.controllers.LibrosController">
 
-    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Listado de Libros" />
-   <MenuBar>
-     <menus>
-       <Menu mnemonicParsing="false" text="Archivo">
-         <items>
-           <MenuItem mnemonicParsing="false" text="Volver" />
-         </items>
-       </Menu>
-       <Menu mnemonicParsing="false" text="Mostrar">
-         <items>
-               <RadioMenuItem mnemonicParsing="false" text="Libros" />
-               <MenuItem mnemonicParsing="false" text="Audiolibros" />
-           <MenuItem mnemonicParsing="false" text="Todos" />
-         </items>
-       </Menu>
-       <Menu mnemonicParsing="false" text="Help">
-         <items>
-           <MenuItem mnemonicParsing="false" text="Acerca de" />
-         </items>
-       </Menu>
-     </menus>
-   </MenuBar>
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Listado de Libros"/>
+    <MenuBar>
+        <menus>
+            <Menu mnemonicParsing="false" text="Archivo">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Volver"/>
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Mostrar">
+                <items>
+                    <RadioMenuItem mnemonicParsing="false" text="Libros"/>
+                    <MenuItem mnemonicParsing="false" text="Audiolibros"/>
+                    <MenuItem mnemonicParsing="false" text="Todos"/>
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Acerca de"/>
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
 
     <TableView fx:id="tablaLibros" prefHeight="454.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
 
         <columns>
 
-            <TableColumn fx:id="codISBN" prefWidth="200" text="IBSN" />
-            <TableColumn fx:id="colTitulo" prefWidth="200" text="Título" />
-            <TableColumn fx:id="colAutores" prefWidth="250" text="Autor(es)" />
-            <TableColumn fx:id="colAnio" prefWidth="100" text="Año" />
-            <TableColumn fx:id="colCategoria" prefWidth="150" text="Categoría" />
-            <TableColumn fx:id="colFormato" prefWidth="100" text="Formato" />
-            <TableColumn fx:id="colDuracion" prefWidth="120" text="Duración" />
+            <TableColumn fx:id="colISBN" prefWidth="200" text="IBSN"/>
+            <TableColumn fx:id="colTitulo" prefWidth="200" text="Título"/>
+            <TableColumn fx:id="colAutores" prefWidth="250" text="Autor(es)"/>
+            <TableColumn fx:id="colAnio" prefWidth="100" text="Año"/>
+            <TableColumn fx:id="colCategoria" prefWidth="150" text="Categoría"/>
+            <TableColumn fx:id="colFormato" prefWidth="100" text="Formato"/>
+            <TableColumn fx:id="colDuracion" prefWidth="120" text="Duración"/>
 
         </columns>
-      <contextMenu>
-         <ContextMenu>
-           <items>
-             <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-           </items>
-         </ContextMenu>
-      </contextMenu>
+        <contextMenu>
+            <ContextMenu>
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Unspecified Action"/>
+                </items>
+            </ContextMenu>
+        </contextMenu>
 
     </TableView>
-   <HBox alignment="CENTER" pickOnBounds="false" prefHeight="39.0" prefWidth="800.0" spacing="30.0" VBox.vgrow="NEVER">
-      <children>
-      
-          <Button onAction="#onVolverClick" text="Volver" />
-         <Button mnemonicParsing="false" text="Nuevo" />
-         <Button mnemonicParsing="false" text="Modificar" textAlignment="CENTER" />
-         <Button mnemonicParsing="false" text="Eliminar" />
-      </children>
-   </HBox>
+    <HBox alignment="CENTER" pickOnBounds="false" prefHeight="39.0" prefWidth="800.0" spacing="30.0" VBox.vgrow="NEVER">
+        <children>
+
+            <Button onAction="#onVolverClick" text="Volver"/>
+            <Button onAction="#onNuevoClick" text="Nuevo"/>
+            <Button mnemonicParsing="false" text="Eliminar"/>
+        </children>
+    </HBox>
 
 </VBox>

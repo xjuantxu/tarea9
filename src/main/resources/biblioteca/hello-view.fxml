@@ -5,10 +5,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="203.0" prefWidth="193.0" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioteca.controllers.ConexionController">
+<VBox alignment="CENTER"
+      prefHeight="203.0"
+      prefWidth="193.0"
+      spacing="20.0"
+      xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="biblioteca.controllers.ConexionController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
-   <Label alignment="CENTER" text="Pulsa el botón &quot;Conectar&quot; para realizar la conexión a la base de datos y comenzar el programa." textAlignment="CENTER" wrapText="true" />
-    <Button onAction="#onConectarButtonClick" text="Conectar" />
+    <Label alignment="CENTER"
+           text="Pulsa el botón &quot;Conectar&quot; para realizar la conexión a la base de datos y comenzar el programa."
+           textAlignment="CENTER" wrapText="true"/>
+    <Button onAction="#onConectarButtonClick" text="Conectar"/>
 </VBox>

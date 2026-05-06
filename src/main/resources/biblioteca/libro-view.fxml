@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="biblioteca.controllers.LibroController">
+
+    <HBox spacing="10">
+        <Label text="ISBN:" prefWidth="100"/>
+        <TextField fx:id="txtIsbn"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Título:" prefWidth="100"/>
+        <TextField fx:id="txtTitulo"/>
+    </HBox>
+
+
+    <HBox spacing="10">
+        <Label text="Año:" prefWidth="100"/>
+        <TextField fx:id="txtAnio"/>
+    </HBox>
+
+
+    <HBox spacing="10">
+        <Label text="Categoría:" prefWidth="100"/>
+        <ComboBox fx:id="cmbCategoria"/>
+    </HBox>
+
+
+    <HBox spacing="10">
+        <Label text="Tipo:" prefWidth="100"/>
+        <ComboBox fx:id="cmbTipo"/>
+    </HBox>
+
+
+    <HBox spacing="10">
+        <Label text="Formato:" prefWidth="100"/>
+        <TextField fx:id="txtFormato"/>
+    </HBox>
+
+
+    <HBox spacing="10">
+        <Label text="Duración (seg):" prefWidth="100"/>
+        <TextField fx:id="txtDuracion"/>
+    </HBox>
+
+
+    <Label text="Autor"/>
+
+    <HBox spacing="10">
+        <TextField fx:id="txtNombreAutor" promptText="Nombre"/>
+        <TextField fx:id="txtApellidosAutor" promptText="Apellidos"/>
+        <TextField fx:id="txtNacionalidadAutor" promptText="Nacionalidad"/>
+        <Button text="Añadir" onAction="#onAddAutor"/>
+    </HBox>
+
+    <ListView fx:id="listaAutores" prefHeight="100"/>
+
+</VBox>

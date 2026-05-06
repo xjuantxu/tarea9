@@ -11,7 +11,6 @@
       xmlns="http://javafx.com/javafx/17.0.12"
       fx:controller="biblioteca.controllers.MenuController">
 
-    <!-- HEADER -->
     <HBox alignment="TOP_CENTER" style="-fx-background-color: #2e7d32;" prefHeight="80">
         <Label text="Gestión de bibliotecas"
                style="-fx-text-fill: white;
@@ -20,20 +19,16 @@
               -fx-letter-spacing: 1px;"/>
     </HBox>
 
-    <!-- CONTENIDO -->
     <HBox spacing="20" VBox.vgrow="ALWAYS" alignment="CENTER">
 
-        <!-- BOTONES -->
         <VBox alignment="CENTER_LEFT" spacing="15">
             <Button text="Libros" onAction="#onLibrosClick" prefWidth="200"/>
             <Button text="Usuarios" onAction="#onUsuariosClick" prefWidth="200"/>
             <Button text="Préstamos" onAction="#onPrestamosClick" prefWidth="200"/>
         </VBox>
 
-        <!-- Empuja el icono a la derecha -->
         <Region HBox.hgrow="ALWAYS"/>
 
-        <!-- ICONO -->
         <ImageView fitHeight="120" preserveRatio="true">
             <image>
                 <Image url="@/img/icon.png"/>
@@ -41,7 +36,6 @@
         </ImageView>
 
     </HBox>
-    <!-- FOOTER -->
     <HBox alignment="BOTTOM_LEFT">
         <padding>
             <Insets top="10" right="10" bottom="10" left="10"/>

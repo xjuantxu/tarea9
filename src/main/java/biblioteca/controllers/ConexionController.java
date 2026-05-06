@@ -26,17 +26,17 @@ public class ConexionController {
     protected void onConectarButtonClick(ActionEvent event) {
         try {
             controlador.comenzar();
-            mostrarExito("Conexion realizada correctamente");
+            mostrarInfo("Conexion realizada correctamente");
             cambiarVista(event, "menu-view.fxml");
 
         } catch (Exception e) {
-            mostrarError("Error al conectar con la base de datos:\n" + e.getMessage());
+            mostrarError(e.getMessage());
         }
     }
 
-    private void mostrarExito(String mensaje) {
+    private void mostrarInfo(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Conexion");
+        alert.setTitle("Información");
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
